@@ -1,12 +1,26 @@
+import * as React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Video, Coffee, Rocket } from 'lucide-react';
+import { Code2, Video, Coffee, Rocket, Mic, Megaphone, UserPen, Brain } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function AboutSection() {
   const stats = [
-    { icon: Code2, value: '50+', label: 'Projects Selesai' },
-    { icon: Video, value: '100+', label: 'Video Konten' },
-    { icon: Coffee, value: '1000+', label: 'Cangkir Kopi' },
-    { icon: Rocket, value: '5+', label: 'Tahun Pengalaman' },
+    { icon: Mic, label: 'English Communication' },
+    { icon: Megaphone, label: 'News Anchoring' },
+    { icon: UserPen, label: 'Poster Editing / Poster Design' },
+    { icon: Brain, label: 'Creative Thinking' },
+  ];
+
+  const images = [
+    { src: '/sarah-profile.jpg', alt: 'Sarah Profile' },
+    { src: '/sarah-prestasi.jpg', alt: 'Sarah Prestasi' },
+    { src: '/sertifikat-1.jpg', alt: 'Sertifikat 1' },
   ];
 
   return (
@@ -34,12 +48,29 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
           >
             <div className="relative">
-              <div className="aspect-square rounded-2xl overflow-hidden glass shadow-card">
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <img src="/public/sarah-profile.jpg" alt="foto" className="w-full h-full object-cover" />
-                </div>
-              </div>
-              <div className="absolute -bottom-6 -right-6 p-4 glass rounded-xl shadow-card">
+              <Carousel
+                className="w-full max-w-sm mx-auto"
+              >
+                <CarouselContent>
+                  {images.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="aspect-square rounded-2xl overflow-hidden glass shadow-card">
+                        <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                          <img 
+                            src={image.src} 
+                            alt={image.alt} 
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="-left-12" />
+                <CarouselNext className="-right-12" />
+              </Carousel>
+              
+              <div className="absolute -bottom-6 -right-6 p-4 glass rounded-xl shadow-card z-20">
                 <p className="font-display font-bold text-2xl text-gradient">5+ Tahun</p>
                 <p className="text-sm text-muted-foreground">Pengalaman</p>
               </div>
@@ -54,18 +85,12 @@ export default function AboutSection() {
             className="space-y-6"
           >
             <h3 className="font-display text-2xl md:text-3xl font-bold">
-              Passionate Developer &amp; Creator
+              Halo 👋
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Saya adalah seorang Fullstack Web Developer dengan passion yang kuat dalam menciptakan 
-              solusi digital yang inovatif. Dengan pengalaman lebih dari 5 tahun, saya telah 
-              membantu berbagai klien dan perusahaan dalam mewujudkan ide-ide mereka menjadi 
-              aplikasi web yang powerful dan user-friendly.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Selain coding, saya juga aktif sebagai Content Creator, berbagi pengetahuan 
-              tentang pemrograman dan teknologi melalui berbagai platform. Saya percaya bahwa 
-              berbagi ilmu adalah cara terbaik untuk terus belajar dan berkembang.
+              Saya Sarah Muyassarah Muttaqin, lahir pada 8 Juli 2010 dan biasa dipanggil Sarah. 
+              Saya bersekolah di MAN 1 Banda Aceh, kelas 10 Program Pre-Internasional. 
+              Saya sangat menyukai Bahasa Inggris dan senang terus belajar serta mengembangkan diri.
             </p>
             <div className="grid grid-cols-2 gap-4 pt-4">
               {stats.map((stat, index) => (
@@ -78,7 +103,6 @@ export default function AboutSection() {
                   className="p-4 glass rounded-xl text-center hover:shadow-card-hover transition-shadow"
                 >
                   <stat.icon className="h-6 w-6 text-primary mx-auto mb-2" />
-                  <p className="font-display text-2xl font-bold">{stat.value}</p>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
                 </motion.div>
               ))}

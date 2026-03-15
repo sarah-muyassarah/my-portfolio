@@ -14,7 +14,7 @@ function SocialAccordion() {
     { icon: Github, href: 'https://github.com/sarah-muyassarah', label: 'GitHub', color: 'hover:text-[#333]' },
     { icon: Linkedin, href: '#', label: 'LinkedIn', color: 'hover:text-[#0077b5]' },
     { icon: Youtube, href: '#', label: 'YouTube', color: 'hover:text-[#ff0000]' },
-    { icon: Instagram, href: '#', label: 'Instagram', color: 'hover:text-[#e4405f]' },
+    { icon: Instagram, href: 'https://www.instagram.com/muyassarahsarh?igsh=aDhid2FuZzA4ZDli', label: 'Instagram', color: 'hover:text-[#e4405f]' },
   ];
 
   return (

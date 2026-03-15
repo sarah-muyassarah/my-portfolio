@@ -14,28 +14,20 @@ const projects = [
     description: 'Kompetisi ASEAN Innovative Science Environmental and Entrepreneur Fair 2024 yang diselenggarakan oleh Indonesian Young Scientist Association. Kegiatan ini dilakukan secara berkelompok dan hasil penelitian dipresentasikan secara online di hadapan dewan juri. Kompetisi berlangsung pada 2–5 Februari 2024 di Semarang, Indonesia.',
     tags: ['ASEAN Innovative Science Environmental and Entrepreneur Fair 2024'],
     image: '📚',
-    color: 'from-blue-500/20 to-cyan-500/20',
+    color: 'from-pink-500/10 to-rose-500/10',
     github: '#',
     demo: '#',
   },
   {
-    title: 'Learning Management System',
-    description: 'Platform pembelajaran online dengan video streaming, quiz interaktif, dan progress tracking.',
-    tags: ['Next.js', 'TypeScript', 'MongoDB', 'WebRTC'],
+    title: 'Portfolio',
+    description: 'Personal Portfolio website untuk tugas koding',
+    tags: ['Reactjs', 'TypeScript'],
     image: '📚',
-    color: 'from-purple-500/20 to-pink-500/20',
-    github: '#',
-    demo: '#',
+    color: 'from-rose-400/10 to-pink-400/10',
+    github: 'https://github.com/sarah-muyassarah/my-portfolio',
+    demo: 'https://my-portfolio-drab-beta-75.vercel.app/',
   },
-  {
-    title: 'Social Media Dashboard',
-    description: 'Dashboard analytics untuk social media dengan real-time data visualization dan reporting.',
-    tags: ['React', 'D3.js', 'Firebase', 'Tailwind'],
-    image: '📊',
-    color: 'from-orange-500/20 to-red-500/20',
-    github: '#',
-    demo: '#',
-  }
+  
 ];
 
 export default function ProjectsSection() {
@@ -56,7 +48,7 @@ export default function ProjectsSection() {
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}

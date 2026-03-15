@@ -8,28 +8,19 @@ const certificates = [
     award: 'Juara 3',
     date: '2025',
     event: 'Competition of Methodist (COMET-4)',
-    image: '/public/sertifikat-1.jpg',
-    color: 'from-orange-500/20 to-yellow-500/20',
-    link: '/public/sertifikat-1.jpg',
+    image: '/sertifikat-1.jpg',
+    color: 'from-rose-500/10 to-pink-500/10',
+    link: '/sertifikat-1.jpg',
   },
   {
     title: 'Innovation Science',
     award: 'Bronze Medal',
     date: '2024',
     event: 'Asean Innovative Science Environmental and Entrepreneur Fair 2024 Online Competition',
-    image: '/public/sertifikat-2.jpg',
-    color: 'from-blue-500/20 to-cyan-500/20',
-    link: '/public/sertifikat-2.jpg',
-  },
-  {
-    title: 'Professional Scrum Master I',
-    award: 'Scrum.org',
-    date: '2022',
-    event: 'PSM-I-234567',
-    image: '📋',
-    color: 'from-teal-500/20 to-cyan-500/20',
-    link: '#',
-  },
+    image: '/sertifikat-2.jpg',
+    color: 'from-pink-400/10 to-rose-400/10',
+    link: '/sertifikat-2.jpg',
+  }
 ];
 
 export default function CertificatesSection() {
@@ -50,7 +41,7 @@ export default function CertificatesSection() {
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-7xl mx-auto">
           {certificates.map((cert, index) => (
             <motion.div
               key={cert.title}
