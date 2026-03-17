@@ -71,8 +71,8 @@ export default function AboutSection() {
               </Carousel>
               
               <div className="absolute -bottom-6 -right-6 p-4 glass rounded-xl shadow-card z-20">
-                <p className="font-display font-bold text-2xl text-gradient">5+ Tahun</p>
-                <p className="text-sm text-muted-foreground">Pengalaman</p>
+                <p className="font-display font-bold text-2xl text-gradient">Sarah Muyassarah Muttaqin</p>
+                <p className="text-sm text-muted-foreground">Nama Lengkap</p>
               </div>
             </div>
           </motion.div>

@@ -6,9 +6,8 @@ export default function Footer() {
 
   const socialLinks = [
     { icon: Github, href: 'https://github.com/sarah-muyassarah', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Youtube, href: '#', label: 'YouTube' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/sarah-muyassarah-54a311396?utm_source=share_via&utm_content=profile&utm_medium=member_android', label: 'LinkedIn' },
+    { icon: Instagram, href: 'https://www.instagram.com/muyassarahsarh?igsh=aDhid2FuZzA4ZDli', label: 'Instagram' },
   ];
 
   return (
@@ -36,6 +35,8 @@ export default function Footer() {
               <a
                 key={social.label}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
                 aria-label={social.label}
               >

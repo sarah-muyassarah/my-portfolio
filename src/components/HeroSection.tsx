@@ -1,59 +1,7 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Youtube, Instagram, Share2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowDown, Github, Linkedin, Youtube, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import ThreeScene from './ThreeScene';
-
-function SocialAccordion() {
-  const socials = [
-    { icon: Github, href: 'https://github.com/sarah-muyassarah', label: 'GitHub', color: 'hover:text-[#333]' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn', color: 'hover:text-[#0077b5]' },
-    { icon: Youtube, href: '#', label: 'YouTube', color: 'hover:text-[#ff0000]' },
-    { icon: Instagram, href: 'https://www.instagram.com/muyassarahsarh?igsh=aDhid2FuZzA4ZDli', label: 'Instagram', color: 'hover:text-[#e4405f]' },
-  ];
-
-  return (
-    <Accordion type="single" collapsible className="w-full max-w-[200px]">
-      <AccordionItem value="socials" className="border-none">
-        <AccordionTrigger className="glass px-6 py-3 rounded-full bg-primary text-primary-foreground shadow-glow hover:no-underline hover:scale-105 transition-all duration-300 flex items-center gap-2 justify-center group data-[state=open]:rounded-b-none">
-          <div className="flex items-center gap-2">
-            <span className="font-medium">Social Media</span>
-          </div>
-        </AccordionTrigger>
-        <AccordionContent className="glass rounded-b-3xl border-t-0 p-0 overflow-hidden">
-          <motion.div 
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center justify-center gap-6 py-4 px-2"
-          >
-            {socials.map((social, index) => (
-              <motion.a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.05 }}
-                className={`p-1 text-foreground/70 transition-colors duration-300 ${social.color}`}
-                whileHover={{ scale: 1.2, y: -2 }}
-                whileTap={{ scale: 0.9 }}
-                aria-label={social.label}
-              >
-                <social.icon className="h-5 w-5" />
-              </motion.a>
-            ))}
-          </motion.div>
-        </AccordionContent>
-      </AccordionItem>
-    </Accordion>
-  );
-}
 
 export default function HeroSection() {
   const scrollToAbout = () => {
@@ -90,7 +38,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            Sarah Muyasarah
+            Sarah Muyassarah
             <br />
             <span className="text-gradient">Kelas X-4</span>
           </motion.h1>
@@ -108,7 +56,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
             <Button 
               size="lg" 
@@ -137,12 +85,38 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="flex items-center justify-center"
+            className="flex items-center justify-center gap-6"
           >
-            <SocialAccordion />
+            {[
+              { icon: Github, href: 'https://github.com/sarah-muyassarah', label: 'GitHub' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/in/sarah-muyassarah-54a311396?utm_source=share_via&utm_content=profile&utm_medium=member_android', label: 'LinkedIn' },
+              { icon: Instagram, href: 'https://www.instagram.com/muyassarahsarh?igsh=aDhid2FuZzA4ZDli', label: 'Instagram' },
+            ].map((social) => (
+              <motion.a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full glass hover:shadow-glow transition-all duration-300"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label={social.label}
+              >
+                <social.icon className="h-5 w-5 text-foreground" />
+              </motion.a>
+            ))}
           </motion.div>
         </div>
       </div>
+
+      <motion.button
+        onClick={scrollToAbout}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 p-3 rounded-full glass animate-float cursor-pointer"
+        whileHover={{ scale: 1.1 }}
+        aria-label="Scroll to About"
+      >
+        <ArrowDown className="h-5 w-5 text-primary" />
+      </motion.button>
     </section>
   );
 }
