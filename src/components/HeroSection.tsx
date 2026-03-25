@@ -40,7 +40,6 @@ export default function HeroSection() {
           >
             Sarah Muyassarah
             <br />
-            <span className="text-gradient">Kelas X-4</span>
           </motion.h1>
 
           <motion.p
